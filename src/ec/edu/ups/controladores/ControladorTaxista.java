@@ -47,16 +47,20 @@ public class ControladorTaxista {
        return null;        
     }
     
-    public Taxista delete(Taxista obj){
+    public void delete(int codigo){
         for (Taxista taxi : lista) {            
-            if(obj.getCodigo() == codigo){
-                lista.remove(obj);
+            if(taxi.getCodigo() == codigo){
+                lista.remove(taxi);
                 break;
             }
             
         }
-       return null;
-        
+    }
+    
+    public void imprimir(){
+        for(Taxista taxi: lista){
+            System.out.println(taxi.getNombre());
+        }
     }
 }
 

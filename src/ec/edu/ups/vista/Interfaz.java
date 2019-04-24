@@ -38,10 +38,10 @@ public class Interfaz {
         int opcion;
         while (!salir) {
             System.out.println("\tMENÚ:");
-            System.out.println("1.- CRUD  de Empleado Asalariado");
-            System.out.println("2.- CRUD  de Taxista");
-            System.out.println("3.- CRUD  de Profesor Contratado");
-            System.out.println("4.- CRUD  de Profesor Sustituto");
+            System.out.println("1.- CRUD  de Empleado Asalariado ---> ArrayList");
+            System.out.println("2.- CRUD  de Taxista ---> HashSet");
+            System.out.println("3.- CRUD  de Profesor Contratado ---> Map");
+            System.out.println("4.- CRUD  de Profesor Sustituto ---> SortedSet");
             System.out.println("5.- Salir");
             System.out.println("Eliga una opcion:");
             opcion = n.nextInt();
@@ -63,7 +63,7 @@ public class Interfaz {
                         System.out.println("3.- U: Update");
                         System.out.println("4.- D: Delete");
                         System.out.println("5.- Listar los elementos");
-                        System.out.println("5.- -- Regresar --");
+                        System.out.println("6.- -- Regresar --");
                         System.out.println("Eliga una opcion:");
                         opcion1 = n1.nextInt();
                         switch (opcion1) {
@@ -189,7 +189,7 @@ public class Interfaz {
                                 objeto.setCodigo(codigoempleado);
                                 controladorEmpleadoAsalariado.update(objeto);
                                 }else{
-                                    System.out.println("El profesional no existe");
+                                    System.out.println("El Empleado no existe");
                                 }
                                 
                                 break;
@@ -340,6 +340,8 @@ public class Interfaz {
                                 }
                                 
                                 controladorTaxista.update(objeto);  
+                                }else{
+                                    System.out.println("El Taxista no existe");
                                 }
                                 
                                 break;
@@ -351,6 +353,7 @@ public class Interfaz {
                                 break;
                             case 5:
                                 controladorTaxista.imprimir();
+                                break;
                             case 6:
                                 salir = true;
 /////////////////////////////////////////////////////////////////////////////////////    
@@ -375,7 +378,7 @@ public class Interfaz {
                         System.out.println("3.- U: Update");
                         System.out.println("4.- D: Delete");
                         System.out.println("5.- Listar los elementos");
-                        System.out.println("5.- -- Regresar --");
+                        System.out.println("6.- -- Regresar --");
                         System.out.println("Eliga una opcion:");
                         opcion1 = n2.nextInt();
                         switch (opcion1) {
@@ -433,10 +436,7 @@ public class Interfaz {
                                 System.out.println("Ingrese el codigo a actualizar");
                                 int codigoprofenu = n3.nextInt();
                                 if(controladorProfesorContratado.read(codigoprofenu) != null){
-                                    
-                                    
-                                }
-                                objeto = new ProfesorContratado();
+                                    objeto = new ProfesorContratado();
                                 System.out.println("Ingrese su nombre");
                                 nombre = nuevo2.next();
                                 
@@ -461,11 +461,15 @@ public class Interfaz {
                                     System.out.println("Usted fue contratado el: " + fecha3);
                                 } catch (Exception e) {
                                     System.out.println("invalid format");
-                                }
-                                
+                                }                               
 
                                 controladorProfesorContratado.update(objeto);
-                                break;
+                                                                  
+                                }else{
+                                    System.out.println("El Profesor Contratado no existe");
+                                }
+                                break;  
+                                
                             case 4:
                                 System.out.println("\t Delete");
                                 System.out.println("Ingrese el usuario a eliminar");
@@ -473,7 +477,8 @@ public class Interfaz {
                                 controladorProfesorContratado.delete(profecon);
                                 break;
                             case 5:
-                                //////
+                                controladorProfesorContratado.imprimir();
+                                break;
                                 
                             case 6:
                                 salir = true;
@@ -498,7 +503,8 @@ public class Interfaz {
                         System.out.println("2.- R: Read");
                         System.out.println("3.- U: Update");
                         System.out.println("4.- D: Delete");
-                        System.out.println("5.- -- Regresar --");
+                        System.out.println("5.- Listar los elementos");
+                        System.out.println("6.- -- Regresar --");
                         System.out.println("Eliga una opcion:");
                         opcion1 = n2.nextInt();
                         switch (opcion1) {
@@ -507,58 +513,68 @@ public class Interfaz {
                                 System.out.println("\t Create");
                                 System.out.println("Ingrese su nombre");
                                 String nombre = nuevo3.next();
-                                objeto.setNombre(nombre);
+                                
                                 System.out.println("Ingrese su cedula");
                                 String cedula = nuevo3.next();
-                                objeto.setCedula(cedula);
+                                
                                 System.out.println("Ingrese su edad");
                                 int edad = nuevo3.nextInt();
-                                objeto.setEdad(edad);
+                                
                                 System.out.println("Ingrese el codigo");
                                 int codigo = nuevo3.nextInt();
-                                objeto.setCodigo(codigo);
+                                
 
                                 System.out.println("Ingrese su genero");
                                 String gene = nuevo3.next();
-                                objeto.setGenero(gene);
+                               
 
                                 controladorProfesorSustituto.create(objeto);
                                 break;
                             case 2:
                                 System.out.println("\t Read");
                                 System.out.println("Ingrese el usuario a leer");
-                                nombre = nuevo.next();
-                                System.out.println(controladorProfesorContratado.read(nombre));
+                                int profesu = nuevo.nextInt();
+                                System.out.println(controladorProfesorContratado.read(profesu));
                                 break;
                             case 3:
                                 System.out.println("\t Update");
-                                objeto = new ProfesorSustituto();
+                                System.out.println("Ingrese el codigo a actualizar");
+                                int profesus = n3.nextInt();
+                                if(controladorProfesorSustituto.read(profesus) != null){
+                                    objeto = new ProfesorSustituto();
                                 System.out.println("Ingrese su nombre");
                                 nombre = nuevo3.next();
-                                objeto.setNombre(nombre);
+                                
                                 System.out.println("Ingrese su cedula");
                                 cedula = nuevo3.next();
-                                objeto.setCedula(cedula);
+                               
                                 System.out.println("Ingrese su edad");
                                 edad = nuevo3.nextInt();
-                                objeto.setEdad(edad);
+                               
                                 System.out.println("Ingrese el codigo");
                                 codigo = nuevo3.nextInt();
                                 objeto.setCodigo(codigo);
 
                                 System.out.println("Ingrese su genero");
                                 gene = nuevo3.next();
-                                objeto.setGenero(gene);
+                                
 
                                 controladorProfesorSustituto.update(objeto);
+                                }else{
+                                    System.out.println("El Profesor Sustituto no existe");
+                                }
+                                
                                 break;
                             case 4:
                                 System.out.println("\t Delete");
                                 System.out.println("Ingrese el usuario a eliminar");
-                                nombre = nuevo.next();
-                                controladorProfesorSustituto.delete(nombre);
+                                profesus = n3.nextInt();
+                                controladorProfesorSustituto.delete(profesus);
                                 break;
                             case 5:
+                                controladorProfesorSustituto.imprimir();
+                                break;
+                            case 6:
                                 salir = true;
                         }
 

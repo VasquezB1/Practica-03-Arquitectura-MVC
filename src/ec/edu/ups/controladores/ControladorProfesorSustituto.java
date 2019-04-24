@@ -49,21 +49,21 @@ public class ControladorProfesorSustituto {
         } 
     }
     
-    public void delete(ProfesorSustituto obj){
-        for (ProfesorSustituto profesorSustituto : lista) {            
-            if(obj.getCodigo() == codigo){
-                lista.remove(obj);
+    public void delete(int codigo){
+        for (ProfesorSustituto objeto : lista) {            
+            if(objeto.getCodigo() == codigo){
+                lista.remove(objeto);
                 break;
             }            
         }      
     }
     
-    public ProfesorSustituto imprimir(ProfesorSustituto obj){
+    public ProfesorSustituto imprimir(){
         System.out.println("\t Lista Ordenada");
         for (ProfesorSustituto profesorSustituto : lista) {
-            System.out.println(profesorSustituto);            
+            System.out.println(profesorSustituto.getNombre());            
         }            
-        return null;        
+        return null;       
     }
     
     

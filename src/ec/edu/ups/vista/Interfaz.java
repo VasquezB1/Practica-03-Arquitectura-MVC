@@ -9,6 +9,7 @@ import ec.edu.ups.controladores.ControladorEmpleadoAsalariado;
 import ec.edu.ups.controladores.ControladorProfesorContratado;
 import ec.edu.ups.controladores.ControladorProfesorSustituto;
 
+
 import ec.edu.ups.controladores.ControladorTaxista;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -16,6 +17,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Scanner;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /**
  *
@@ -554,16 +557,15 @@ public class Interfaz {
                                 String cole = n3.next();
                                 objeto.setColegio(cole);
                                 System.out.println("Ingrese turno");
-                                String tur = n3.next();
-                                
+                                String tur = n3.next();                                
                                 objeto.setTurno(tur);
                                 controladorProfesorSustituto.create(objeto);
                                 break;
                             case 2:
                                 System.out.println("\t Read");
-                                System.out.println("Ingrese el usuario a leer");
+                                System.out.println("Ingrese el codigo a leer");
                                 int profesu = nuevo.nextInt();
-                                System.out.println(controladorProfesorContratado.read(profesu));
+                                System.out.println(controladorProfesorSustituto.read(profesu));
                                 break;
                             case 3:
                                 System.out.println("\t Update");
@@ -608,6 +610,7 @@ public class Interfaz {
                                 String tur2 = n3.next();
                                 
                                 objeto.setTurno(tur2);
+                             
                                 controladorProfesorSustituto.update(objeto);
                                 } else {
                                     System.out.println("El Profesor Sustituto no existe");
@@ -617,7 +620,7 @@ public class Interfaz {
                             case 4:
                                 System.out.println("\t Delete");
                                 System.out.println("Ingrese el usuario a eliminar");
-                                profesus = n3.nextInt();
+                                profesus = nuevo2.nextInt();
                                 controladorProfesorSustituto.delete(profesus);
                                 break;
                             case 5:

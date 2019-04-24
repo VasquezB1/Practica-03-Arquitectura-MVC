@@ -1,17 +1,16 @@
-
-
+package ec.edu.ups.controladores;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.controladores;
-
 import ec.edu.ups.clases.ProfesorSustituto;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
-
 
 /**
  *
@@ -19,18 +18,18 @@ import java.util.TreeSet;
  */
 public class ControladorProfesorSustituto {
     
-    private SortedSet<ProfesorSustituto> lista;
+    private Set<ProfesorSustituto> lista;
     private int codigo;
     
     public ControladorProfesorSustituto(){
-        lista= new TreeSet<>(); 
+        lista= new HashSet<>(); 
         codigo=0;
     }
     
-    public void create(ProfesorSustituto objeto){
+    public void create(ProfesorSustituto obj){
         codigo++;
-        objeto.setCodigo(codigo);
-        lista.add(objeto);
+        obj.setCodigo(codigo);
+        lista.add(obj);
     }
     
     public  ProfesorSustituto read (int codigo){
@@ -42,27 +41,28 @@ public class ControladorProfesorSustituto {
        return null;         
         }
     
-    public void update(ProfesorSustituto objeto){
-        if(lista.contains(objeto)){
-            lista.remove(objeto);
-            lista.add(objeto);
+    public void update(ProfesorSustituto obj){
+        if(lista.contains(obj)){
+            lista.remove(obj);
+            lista.add(obj);
         } 
     }
     
     public void delete(int codigo){
-        for (ProfesorSustituto objeto : lista) {            
-            if(objeto.getCodigo() == codigo){
-                lista.remove(objeto);
+        for (ProfesorSustituto obj : lista) {            
+            if(obj.getCodigo() == codigo){
+                lista.remove(obj);
                 break;
             }            
         }      
     }
     
-    public void imprimir(){
+    public ProfesorSustituto imprimir(){
         System.out.println("\t Lista Ordenada");
         for (ProfesorSustituto profesorSustituto : lista) {
             System.out.println(profesorSustituto.getNombre());            
         }            
+        return null;        
     }
     
     

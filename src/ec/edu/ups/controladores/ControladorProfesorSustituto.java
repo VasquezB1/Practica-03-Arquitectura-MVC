@@ -9,9 +9,9 @@
 package ec.edu.ups.controladores;
 
 import ec.edu.ups.clases.ProfesorSustituto;
-import java.util.Iterator;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
 
 /**
  *
@@ -24,13 +24,13 @@ public class ControladorProfesorSustituto {
     
     public ControladorProfesorSustituto(){
         lista= new TreeSet<>(); 
-        codigo=1;
+        codigo=0;
     }
     
-    public void create(ProfesorSustituto obj){
+    public void create(ProfesorSustituto objeto){
         codigo++;
-        obj.setCodigo(codigo);
-        lista.add(obj);
+        objeto.setCodigo(codigo);
+        lista.add(objeto);
     }
     
     public  ProfesorSustituto read (int codigo){
@@ -42,10 +42,10 @@ public class ControladorProfesorSustituto {
        return null;         
         }
     
-    public void update(ProfesorSustituto obj){
-        if(lista.contains(obj)){
-            lista.remove(obj);
-            lista.add(obj);
+    public void update(ProfesorSustituto objeto){
+        if(lista.contains(objeto)){
+            lista.remove(objeto);
+            lista.add(objeto);
         } 
     }
     
@@ -58,12 +58,11 @@ public class ControladorProfesorSustituto {
         }      
     }
     
-    public ProfesorSustituto imprimir(){
+    public void imprimir(){
         System.out.println("\t Lista Ordenada");
         for (ProfesorSustituto profesorSustituto : lista) {
             System.out.println(profesorSustituto.getNombre());            
         }            
-        return null;       
     }
     
     

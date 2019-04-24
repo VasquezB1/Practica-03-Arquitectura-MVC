@@ -33,7 +33,8 @@ public final class ProfesorSustituto extends Profesor implements Interface {
         this.cursoSustituto = cursoSustituto;
         this.sueldo = sueldo;
     }
-    
+
+  
 
 ////////////////////////////////////////////////////////////////////////////////
     //Get and Set
@@ -107,9 +108,11 @@ public final class ProfesorSustituto extends Profesor implements Interface {
 
     @Override
     public String responderMensajes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Mensajes");
+        return null;
     }
-  
+
+   
 
     
 }

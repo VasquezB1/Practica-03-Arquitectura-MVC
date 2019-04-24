@@ -19,9 +19,9 @@ public final class ProfesorContratado extends Profesor implements Interface {
 ////////////////////////////////////////////////////////////////////////////////
     ///////////////////Declaracion de Variables     
 
-    private Date fechaContratacion;
+    private int horasTrabajadas;
     private int horasContratado;
-    private Date evaluaciones;
+    private int diascontratados;
     private int cursoACargo;
     
 ////////////////////////////////////////////////////////////////////////////////
@@ -29,55 +29,50 @@ public final class ProfesorContratado extends Profesor implements Interface {
      public ProfesorContratado() {
     }
 
-    public ProfesorContratado(Date fechaContratacion, int horasContratado, Date evaluaciones, int cursoACargo, String materia, String colegio, String turno) {
+    public ProfesorContratado(int horasTrabajadas, int horasContratado, int diascontratados, int cursoACargo, String materia, String colegio, String turno) {
         super(materia, colegio, turno);
-        this.fechaContratacion = fechaContratacion;
+        this.horasTrabajadas = horasTrabajadas;
         this.horasContratado = horasContratado;
-        this.evaluaciones = evaluaciones;
+        this.diascontratados = diascontratados;
         this.cursoACargo = cursoACargo;
     }
 
-    
-
- 
-////////////////////////////////////////////////////////////////////////////////
-    //Get and Set   
-
-    public Date getFechaContratacion() {
-        return fechaContratacion;
+    public int getHorasTrabajadas() {   
+        return horasTrabajadas;
     }
 
-    public void setFechaContratacion(Date fechaContratacion) {
-        this.fechaContratacion = fechaContratacion;
+    public void setHorasTrabajadas(int horasTrabajadas) {    
+        this.horasTrabajadas = horasTrabajadas;
     }
 
     public int getHorasContratado() {
         return horasContratado;
     }
 
-    public void setHorasContratado(int horasContratado) {
+    public void setHorasContratado(int horasContratado) {    
         this.horasContratado = horasContratado;
     }
 
-    public Date getEvaluaciones() {
-        return evaluaciones;
+    public int getDiascontratados() {
+        return diascontratados;
     }
 
-    public void setEvaluaciones(Date evaluaciones) {
-        this.evaluaciones = evaluaciones;
+    public void setDiascontratados(int diascontratados) {
+        this.diascontratados = diascontratados;
     }
 
     public int getCursoACargo() {
         return cursoACargo;
     }
 
+////////////////////////////////////////////////////////////////////////////////
+    //Get and Set
     public void setCursoACargo(int cursoACargo) {
         this.cursoACargo = cursoACargo;
     }
 
 /////////////////////////////////////////////////////////////////////////////////
     //Interface
-
     @Override
     public String comer() {
         return "\tEl profesor " + this.getNombre() + " está comiendo";
@@ -110,8 +105,9 @@ public final class ProfesorContratado extends Profesor implements Interface {
 
     @Override
     public String toString() {
-        return "ProfesorContratado{" + "fechaContratacion=" + fechaContratacion + ", horasContratado=" + horasContratado + ", evaluaciones=" + evaluaciones + ", cursoACargo=" + cursoACargo + '}';
+        return super.toString()+"\nProfesorContratado{\n" + "horasTrabajadas=" + horasTrabajadas + ", horasContratado=" + horasContratado + ", diascontratados=" + diascontratados + ", cursoACargo=" + cursoACargo + '}';
     }
+
 
      
 

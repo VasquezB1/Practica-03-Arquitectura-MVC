@@ -36,6 +36,7 @@ public abstract class Empleados extends Persona {
         this.vacaciones = vacaciones;
     }
 
+   
 ////////////////////////////////////////////////////////////////////////////////
     //Get and Set   
     public String getEmpresa() {

@@ -45,11 +45,11 @@ public class ControladorProfesorContratado {
     }
     
     public void imprimir(){
-        for (Map.Entry<Integer,ProfesorContratado> elemento : lista.entrySet()) {
+       for (Map.Entry<Integer, ProfesorContratado> elemento : lista.entrySet()) {
             int key = elemento.getKey();
-            String cedulaProfesorContratado = elemento.getValue().getCedula();
-            System.out.println("Key del profesor: "+ key + "ProfresorContratado cédula: "+ cedulaProfesorContratado );
-            
+            String nomBallena = elemento.getValue().getNombre();
+            System.out.println("Key: " + key + " Nombre Profesor Contratado: " + nomBallena);
         }
-    } 
+    }
+    
 }

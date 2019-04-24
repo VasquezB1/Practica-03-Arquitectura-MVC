@@ -16,7 +16,7 @@ import java.util.Set;
  */
 public class ControladorTaxista {
     
-   private HashSet<Taxista> lista;
+   private Set<Taxista> lista;
    private int codigo;
        
     public ControladorTaxista(){
@@ -32,7 +32,7 @@ public class ControladorTaxista {
     
     public Taxista read (int codigo){
         for (Taxista taxista : lista) {
-            if(taxista.getCodigo()== codigo){
+            if(codigo == taxista.getCodigo()){
                 return taxista;
             }
         }

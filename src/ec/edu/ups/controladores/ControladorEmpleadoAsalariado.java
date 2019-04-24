@@ -17,12 +17,16 @@ public class ControladorEmpleadoAsalariado {
     
    
      private List<EmpleadoAsalariado> lista;
+     private int codigo;
 
     public ControladorEmpleadoAsalariado() {
         lista = new ArrayList<>();
+        codigo=0;
     }
 
     public void create(EmpleadoAsalariado objeto) {
+        codigo++;
+        objeto.setCodigo(codigo);
         
         lista.add(objeto);
         

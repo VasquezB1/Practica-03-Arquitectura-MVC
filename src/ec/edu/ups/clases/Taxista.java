@@ -21,21 +21,20 @@ public final class Taxista extends Empleados implements Interface {
     ///////////////////Declaracion de Variables    
    
     private int numeroAuto;
-    private int codigo;
-    private String turno;
+       private String turno;
     private String telefono;
     public Taxista() {
     }
 ////////////////////////////////////////////////////////////////////////////////
     //Constructor
-    public Taxista(int numeroAuto, int codigo, String turno, String telefono, String empresa, double sueldo, Date fechaContratacion, Date vacaciones, String nombre, String cedula, int edad, String genero) {
-        super(empresa, sueldo, fechaContratacion, vacaciones, nombre, cedula, edad, genero);
+
+    public Taxista(int numeroAuto, String turno, String telefono, String empresa, double sueldoExtra, Date fechaContratacion, Date vacaciones, String nombre, String cedula, int edad, String genero) {
+        super(empresa, sueldoExtra, fechaContratacion, vacaciones, nombre, cedula, edad, genero);
         this.numeroAuto = numeroAuto;
-        this.codigo = codigo;
         this.turno = turno;
         this.telefono = telefono;
     }
-
+    
 ////////////////////////////////////////////////////////////////////////////////
     //Get and Set   
     public int getNumeroAuto() {
@@ -46,13 +45,7 @@ public final class Taxista extends Empleados implements Interface {
         this.numeroAuto = numeroAuto;
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
+  
 
     public String getTurno() {
         return turno;
@@ -103,8 +96,10 @@ public final class Taxista extends Empleados implements Interface {
 
     @Override
     public String toString() {
-        return super.toString() + "\nTaxista:\n{" + "numeroAuto=" + numeroAuto + ", codigo=" + codigo + ", turno=" + turno + ", telefono=" + telefono + '}';
+        return super.toString()+"Taxista{" + "numeroAuto=" + numeroAuto + ", turno=" + turno + ", telefono=" + telefono + '}';
     }
+
+    
 
     @Override
     public String verTelevision() {

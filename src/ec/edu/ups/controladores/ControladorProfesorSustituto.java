@@ -22,7 +22,7 @@ public class ControladorProfesorSustituto {
     private int codigo;
     
     public ControladorProfesorSustituto(){
-        lista= new TreeSet<>(); 
+        lista= new TreeSet <>(); 
         codigo=0;
     }
     

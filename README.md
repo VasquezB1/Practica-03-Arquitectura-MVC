@@ -36,7 +36,8 @@ https://github.com/VasquezB1/Practica-03-Arquitectura-MVC
 ![image](https://user-images.githubusercontent.com/49033314/56638081-d20d5d80-6632-11e9-8aca-97682fb10096.png)
 
 6.	Al menos una clase Controlador debe ser implementada usando la interface Set y la clase HashSet
-![image](https://user-images.githubusercontent.com/49033314/56638099-db96c580-6632-11e9-8cee-acb63c6575f4.png)
+![image](https://user-images.githubusercontent.com/49033314/56748522-a038eb80-6745-11e9-91c8-4a54c41fa16c.png)
+
  
 7.	Al menos una clase Controlador debe ser implementada usando la interface SortedSet y la clase TreeSet.
 ![image](https://user-images.githubusercontent.com/49033314/56638124-e5b8c400-6632-11e9-9fc9-e681f91e2604.png)

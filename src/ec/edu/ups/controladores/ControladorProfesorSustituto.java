@@ -18,11 +18,11 @@ import java.util.TreeSet;
  */
 public class ControladorProfesorSustituto {
     
-    private Set<ProfesorSustituto> lista;
+    private SortedSet<ProfesorSustituto> lista;
     private int codigo;
     
     public ControladorProfesorSustituto(){
-        lista= new HashSet<>(); 
+        lista= new TreeSet<>(); 
         codigo=0;
     }
     
